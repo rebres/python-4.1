@@ -1,0 +1,27 @@
+print('podaj liczbe kul białych:')
+n = int(input())
+print('podaj liczbe kul czarnych:')
+m = int(input())
+print('podaj liczbe kul które będą losowane:')
+k = int(input())
+
+
+suma = n + m
+if n<k:
+    zdarzenie = 1
+    for i in range(k):
+        zdarzenie = zdarzenie * (m - i)/(suma - i)
+elif m<k:
+    zdarzenie = 1
+    for i in range(k):
+        zdarzenie = zdarzenie * (n - i)/(suma - i)
+else:
+    zdarzenie1 = 1
+    zdarzenie2 = 1
+    for i in range(k):
+        zdarzenie1 = zdarzenie1 * (n - i) / (suma - i)
+        zdarzenie2 = zdarzenie2 * (m - i) / (suma - i)
+    zdarzenie = zdarzenie1 + zdarzenie2
+
+print('prawdopodobieństwo wynosi:  ')
+print(zdarzenie)
